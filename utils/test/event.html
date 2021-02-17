@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>event</title>
+	<script type="text/javascript" src="../Event/event.js"></script>
+	<style type="text/css">
+		#outside {
+			width: 200px;
+			height: 200px;
+			background: rgba(153, 106, 34);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#inside {
+			width: 100px;
+			height: 100px;
+			background: rgba(150, 16, 34);
+		}
+	</style>
+</head>
+<body>
+	<div id="outside">
+		<div id="inside"></div>
+	</div>
+
+	<ul id="ul">
+		<li>1111</li>
+		<li>2222</li>
+		<li>333333</li>
+		<li>4444444</li>
+		<li>55555</li>
+	</ul>
+
+	<script type="text/javascript">
+
+		// 捕获(外-内)-冒泡（内-外）
+		// outside.addEventListener('click', function (e) {
+		// 	console.log('捕获 out')
+		// }, true)
+		// inside.addEventListener('click', function (e) {
+		// 	console.log('捕获 in')
+		// }, true)
+
+
+		// outside.addEventListener('click', function (e) {
+		// 	console.log('冒泡 out')
+		// })
+		// inside.addEventListener('click', function (e) {
+		// 	console.log('冒泡 in')
+		// })
+
+
+		// 事件委托
+		// addEventListener('#ul', 'click', function(e) {
+		// 	console.log(this.innerHTML)
+		// }, 'li')
+
+
+		// 事件总线eventBus
+		// eventBus.on('login', data=>{
+		// 	console.log(data + '已登录')
+		// })
+
+		// eventBus.on('login', data=>{
+		// 	console.log(data + '登录数据写入')
+		// })
+
+		// setTimeout(()=>{
+		// 	eventBus.emit('login', 'tom')
+		// }, 2000)
+
+
+		// 发布订阅
+		// let pid = PubSub.subscribe('pay', data=>{
+		// 	console.log('商家接到订单' ,data)
+		// })
+
+		// let pid2 = PubSub.subscribe('pay', data=>{
+		// 	console.log('快递取货', data)
+		// })
+
+		// PubSub.unSubscribe(pid)	
+		// PubSub.unSubscribe('pay')
+
+		// PubSub.publish('pay',{
+		// 	title: '汉堡',
+		// 	price: '28',
+		// 	pos: ''
+		// })
+
+
+ 	</script>
+</body>
+</html>

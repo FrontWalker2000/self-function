@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>call & apply bind</title>
+	<title>对象</title>
 	<script type="text/javascript" src="../Object/object.js"></script>
 
 </head>
@@ -10,12 +10,76 @@
 
 	<script type="text/javascript">
 		// 创建new,实例化过程
-		function Person(name, age) {
-			this.name = name
-			this.age = age
+		// function Person(name, age) {
+		// 	this.name = name
+		// 	this.age = age
+		// }
+		// let obj = newInstance(Person, 'tom', 29)
+		// console.log(obj)
+
+
+		// 构造函数检测
+		// function Person(name, age) {
+		// 	this.name = name
+		// 	this.age = age
+		// }
+		// let p = new Person
+		// console.log(myInstance(p, Person)) // true
+		// console.log(myInstance(p, Object))// true
+		// console.log(myInstance(Person, Object))// true
+		// console.log(myInstance(Person, Function))// true
+		// console.log(myInstance(p, Function)) // false 
+
+		
+		// 对象合并,并集
+		// const obj = {
+		// 	a: [{x: 2}, {y:3}],
+		// 	b: 2
+		// }
+		// const other = {
+		// 	a: {z:3},
+		// 	b: [2,3],
+		// 	c: 'foo'
+		// }
+		// console.log(mergeObj(obj, other))
+
+
+		// 浅拷贝 （$.extend(),  Object.assign(), {...obj}, [...array]）
+
+
+		// 深拷贝
+		// let obj = {
+		// 	a:1,
+		// 	b:{x:2},
+		// 	c: [1]
+		// }
+		// let res = JSON.parse(JSON.stringify(obj))
+		// console.log(res)
+
+
+		// 深拷贝
+		// let obj = {
+		// 	a:1,
+		// 	b:{x:2},
+		// 	c: [1], 
+		// 	d: function(){}
+		// }
+		// let res = deepClone(obj)
+		// console.log(res)
+
+
+		// 深拷贝
+		let obj = {
+			a:1,
+			b:[{x:2}],
+			c: [1], 
+			d: function(){}
 		}
-		let obj = newInstance(Person, 'tom', 29)
-		console.log(obj)
+		obj.b.push(obj.c)
+		obj.c.j = obj.b
+
+		let res = deepClone2(obj)
+		console.log(res)
  	</script>
 </body>
 </html>

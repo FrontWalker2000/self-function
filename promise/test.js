@@ -5,17 +5,23 @@
 
 let Promise = require('./plugin/promise')
 
-let promise  = new Promise((resolve, reject)=>{
-	console.log('promise')
-	setTimeout(()=>{
-		resolve(888)
-	})
-}).then(data=>{
-	console.log(data)
-},err=>{
-	console.log(err, 9999)
-})
-console.log('2')
+// let promise  = new Promise((resolve, reject)=>{
+// 	console.log('promise')
+// 	setTimeout(()=>{
+// 		resolve(888)
+// 	})
+// }).then(data=>{
+// 	console.log(data)
+// },err=>{
+// 	console.log(err, 9999)
+// }).then(data=>{
+// 	console.log(data)
+// },err=>{
+// 	console.log(err, 9999)
+// })
+
+// console.log('2')
 
 
 
+// then
