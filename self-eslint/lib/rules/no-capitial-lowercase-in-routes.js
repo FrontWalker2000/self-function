@@ -22,7 +22,7 @@ module.exports = {
     let testContent = fs.readFileSync('./src/config/environment/test.js').toString()
     let productionContent = fs.readFileSync('./src/config/environment/production.js').toString()
 
-    //获取test配置参数
+    //获取test配置参数//
     function getTestParams () {
       testParams = testContent.split('\n')
       for (let i = 0; i < testParams.length; i++) {
