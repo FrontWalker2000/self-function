@@ -41,7 +41,7 @@
 
 - this
 - 闭包
-- prototype ——proto——
+- prototype
 - 继承
 - Object高级
 - http
