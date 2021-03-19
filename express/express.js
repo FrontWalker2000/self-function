@@ -1,5 +1,6 @@
 let http = require('http')
 let url = require('url')
+
 function createApplication() {
 	// app监听函数common
 	let app = (req, res)=>{
@@ -14,7 +15,7 @@ function createApplication() {
 			if(index === app.routes.length) {
 				return res.end('cannot')
 			}
-			let {method, path, handler}= app.routes[index ++]
+			let {method, path, handler} = app.routes[index ++]
 
 			if (err) {
 				if(handler.length === 4) {
@@ -46,7 +47,7 @@ function createApplication() {
 	app.routes = []
 
 	// 中间件
-	app.use = function(path, handler){
+	app.use = function(path, handler) {
 		if(typeof handler !== 'function') {
 			handler = path
 			path = '/'
@@ -68,9 +69,9 @@ function createApplication() {
 		next()
 	})
 	// 获取所有方法
-	http.METHODS.forEach(method=>{
+	http.METHODS.forEach(method => {
 		method = method.toLowerCase()
-		app[method] = function(path, handler){
+		app[method] = function(path, handler) {
 			let layer = {
 				method,
 				path,
@@ -79,7 +80,7 @@ function createApplication() {
 			app.routes.push(layer)
 		}
 	})
-	app.all = function(path, handler){
+	app.all = function(path, handler) {
 		let layer = {
 			method: 'all',
 			path,
