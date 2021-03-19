@@ -1,4 +1,4 @@
-// 事件代理
+// 事件代理 @emit @on
 function addEventListener(el, type, fn, sel) {
 	// 类型
 	if (typeof el === 'string') {
@@ -24,7 +24,7 @@ const eventBus = {
 	cbs: []
 }
 // 绑定事件
-eventBus.on = function(type, fn){
+eventBus.on = function(type, fn) {
 	if(this.cbs[type]) {
 		this.cbs[type].push(fn)
 	} else {
@@ -34,9 +34,9 @@ eventBus.on = function(type, fn){
 
 }
 // 触发事件
-eventBus.emit = function(type, data){
+eventBus.emit = function(type, data) {
 	if(this.cbs[type] && this.cbs[type].length > 0) {
-		this.cbs[type].forEach(cb=>{
+		this.cbs[type].forEach(cb => {
 			cb(data)
 		})
 	}
@@ -59,7 +59,7 @@ const PubSub = {
 }
 
 // 订阅
-PubSub.subscribe = function(channel, cb){
+PubSub.subscribe = function(channel, cb) {
 	// 唯一id
 	let token = 'token' + this.id ++
 	if(this.cbs[channel]){
@@ -73,9 +73,9 @@ PubSub.subscribe = function(channel, cb){
 }
 
 // 发布
-PubSub.publish = function(channel, data){
+PubSub.publish = function(channel, data) {
 	if(this.cbs[channel]) {
-		Object.values(this.cbs[channel]).forEach(cb=> cb(data))
+		Object.values(this.cbs[channel]).forEach(cb => cb(data))
 	}
 }
 
@@ -86,7 +86,7 @@ PubSub.unSubscribe = function(flag) {
 	}
 	if (typeof flag === 'string') {
 		if(flag.includes('token')) {
-			let cbObj = Object.values(this.cbs).find(obj=>obj.hasOwnProperty(flag))
+			let cbObj = Object.values(this.cbs).find(obj => obj.hasOwnProperty(flag))
 			if (cbObj) {
 				delete cbObj[flag]
 			}
