@@ -11,7 +11,7 @@
 function say(per) {
 	console.log(per + '说话')
 }
-
+//基本
 Function.prototype.before = function(cb) {
 	console.log(this === say) // true
 	return (...args)=>{ 

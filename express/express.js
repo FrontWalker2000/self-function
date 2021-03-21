@@ -1,6 +1,6 @@
 let http = require('http')
 let url = require('url')
-
+// 创建引用函数
 function createApplication() {
 	// app监听函数common
 	let app = (req, res)=>{

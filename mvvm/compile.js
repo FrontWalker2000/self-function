@@ -1,3 +1,4 @@
+// 编译
 class Compile {
   constructor(el, vm) {
     this.el = this.isElementNode(el) ? el : document.querySelector(el)
